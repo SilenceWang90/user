@@ -1,10 +1,10 @@
-package com.imooc.user;
+package com.imooc.user.userserver;
 
 import org.junit.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class UserApplicationTests {
+class UserServerApplicationTests {
 
     @Test
     void contextLoads() {
