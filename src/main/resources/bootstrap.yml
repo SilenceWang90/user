@@ -1,0 +1,23 @@
+server:
+  port: 8007
+spring:
+  application:
+    name: user
+  cloud:
+    config:
+      discovery:
+        #启用配置中心客户端
+        enabled: true
+        #注册中心服务名称，如果写错，则从127.0.0.1:8888服务中查找
+        service-id: config-server
+      #文件名称中的profile(环境名称)
+      profile: dev
+      #文件名称中的label(分支名称)
+      label: master
+      name: user
+#因为配置中心的配置中要查询service-id中的配置中心服务，因此需要先将客户端注册到服务中心才能
+#找到配置中心的服务，不然启动时会报错
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
